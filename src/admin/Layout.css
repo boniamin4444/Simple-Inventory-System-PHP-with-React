@@ -1,0 +1,155 @@
+/* Layout.css */
+
+/* General container setup */
+.app-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents scroll bars on body */
+  flex-direction: column; /* Ensures that header and content stack vertically */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Default sidebar width */
+  background-color: #e0f7fa; /* Light turquoise background for the sidebar */
+  color: #004d40; /* Darker teal text color for readability */
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Fixed sidebar on the left */
+  top: 0;
+  left: 0;
+  bottom: 0; /* Extend sidebar to the bottom */
+  padding: 20px; /* Add padding inside the sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  transition: transform 0.3s ease; /* Smooth transition for sidebar toggle */
+  overflow-y: auto; /* Allow sidebar content to scroll if necessary */
+  z-index: 100; /* Ensure the sidebar is below the header but above content */
+}
+
+.sidebar-responsive {
+  transform: translateX(0); /* Shows sidebar when toggled */
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.sidebar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #004d40; /* Darker teal color for brand */
+}
+
+.close_icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #004d40; /* Darker teal color for close icon */
+}
+
+/* Sidebar list styling */
+.sidebar-list {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list-item {
+  margin-bottom: 15px; /* Space between items */
+  color: #004d40; /* Darker teal text color */
+  position: relative; /* Position relative for submenu */
+}
+
+.sidebar-list-item.active > .sidebar-submenu {
+  display: block; /* Show submenu when parent item is active */
+}
+
+.sidebar-list-item .d-flex {
+  align-items: center;
+}
+
+.sidebar-list-item .icon {
+  margin-right: 10px; /* Space between icon and text */
+  color: #004d40; /* Darker teal color */
+}
+
+.sidebar-submenu {
+  display: none; /* Initially hidden */
+  padding-left: 20px; /* Indentation for submenu items */
+}
+
+.sidebar-submenu .nav-link {
+  font-size: 0.9em; /* Slightly smaller font size for submenu items */
+  color: #00796b; /* Slightly lighter teal color for submenu items */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0f7fa; /* Light turquoise background for header */
+  color: #004d40; /* Darker teal text color */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the header is above other content */
+}
+
+/* Header content alignment */
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon styling */
+.icon {
+  color: #004d40; /* Darker teal color */
+  font-size: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #00796b; /* Slightly lighter teal on hover */
+}
+
+/* Content area */
+.content {
+  margin-top: 60px; /* Adjust based on header height */
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px;
+  background-color: #ffffff; /* White background for the content area */
+  overflow-y: auto; /* Scroll only if content overflows */
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width for smaller screens */
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    position: fixed; /* Keep sidebar fixed on smaller screens */
+    top: 0; /* Ensure sidebar is positioned correctly */
+    left: 0;
+    bottom: 0; /* Extend to bottom */
+  }
+
+  .sidebar-responsive {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  .content {
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+}

@@ -1,0 +1,24 @@
+.growth-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+.chart-item {
+    flex: 1 1 100%; /* Default to full width for small screens */
+    max-width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .chart-item {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row on medium screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .chart-item {
+        flex: 1 1 calc(25% - 20px); /* 4 items per row on large screens */
+    }
+}

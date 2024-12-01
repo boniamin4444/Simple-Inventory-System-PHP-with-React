@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Sidebar.css */
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #343a40;
+  color: white;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar-responsive {
+  width: 60px;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #212529;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.icon-header {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.close_icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-list-item {
+  position: relative;
+}
+
+.sidebar-list-item .icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.sidebar-list-item a {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #adb5bd;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-list-item a:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.sidebar-submenu {
+  padding-left: 1rem;
+}
+
+.sidebar-submenu .nav-link {
+  padding: 0.5rem 1rem;
+  color: #ced4da;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar-submenu .nav-link:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.info-span {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background-color: #dc3545;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
+
+.app-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
