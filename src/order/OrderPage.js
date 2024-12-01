@@ -120,7 +120,7 @@ export default function OrderPage() {
       });
       fetchOrders();
     } catch (error) {
-      console.error('Error updating order status:', error);
+      console.error('Error updating ordern nn  status:', error);
     }
   };
 
